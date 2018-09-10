@@ -18,7 +18,43 @@ stick lengths     length of cut     sticks before cut
 - - - - - -         done              done
 */
 function solution(arr){
-  // TODO: Create the solution
+  let empty = [];
+  let newArr = [];
+
+  newArr = arr;
+  if(arr==null){
+    return empty;
+  }
+  else if(arr==undefined){
+    return empty;
+  }
+
+  
+  while (arr.length > 0){
+    console.log(arr.length);
+    // sort
+    arr.sort((a, b) => (a - b) );
+
+    // - loewest
+    let cut = arr[0];
+    for (let i = 0; i < arr.length; i++){
+        arr[i] -= cut;
+      
+    }
+    // Remove the '0'
+    let remove = arr.lastIndexOf(0) + 1;
+    arr.splice(0, remove);
+     newArr.append(Math.max(arr));
+  }
+
+   return (console.log(newArr));
+  
+  //  return (newArr);
+
+  
+  
+
 }
+
 
 module.exports = solution;
